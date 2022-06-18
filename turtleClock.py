@@ -26,30 +26,46 @@ def createBackground():
     ball_1 = createSeparator("#FFFFFF",0,30)
 
     fistSecElement = DisplayElement(300,0)
-    secondSecElement = DisplayElement(100,0)
+    tenSecElement = DisplayElement(100,0)
 
-    firstMinElement = DisplayElement(-100,0)
-    secondMinElement = DisplayElement(-300,0)
+    oneMinElement = DisplayElement(-100,0)
+    tenMinElement = DisplayElement(-300,0)
 
-    firstSec = 0
-    secondSec = 0
-    firstMin = 0
-    secondMin = 0
-    fistSecElement.drawNumber(firstSec)
-    secondSecElement.drawNumber(secondSec)
-    firstMinElement.drawNumber(firstMin)
-    secondMinElement.drawNumber(secondMin)
+    oneSecund = 5
+    tenSec = 5
+    oneMin = 9
+    tenMin = 0
+    fistSecElement.drawNumber(oneSecund)
+    tenSecElement.drawNumber(tenSec)
+    oneMinElement.drawNumber(oneMin)
+    tenMinElement.drawNumber(tenMin)
 
     while True:
-        if firstSec == 9:
-            firstSec = 0
-            secondSec = secondSec + 1
-            secondSecElement.drawNumber(secondSec)
+        if oneSecund == 9:
+            oneSecund = 0
+            tenSec = tenSec + 1
         else:
-             firstSec = firstSec +1
+             oneSecund = oneSecund +1
+
+        if oneMin == 9 and oneSecund == 9 and tenSec == 5:
+            oneMin = 0
+            oneSecund = 0
+            tenSec = 0
+            tenMin = tenMin +1
+
+        if oneSecund == 9 and tenSec == 5:
+            oneSecund = 0
+            tenSec = 0
+            oneMin = oneMin +1
+
+
 
         window.update()
-        fistSecElement.drawNumber(firstSec)
+        print ("Time" , tenMin ,":",oneMin)
+        fistSecElement.drawNumber(oneSecund)
+        tenSecElement.drawNumber(tenSec)
+        oneMinElement.drawNumber(oneMin)
+        tenMinElement.drawNumber(tenMin)
 
         ball.color("#000000")
         ball_1.color("#000000")

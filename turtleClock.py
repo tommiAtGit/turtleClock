@@ -25,17 +25,32 @@ def createBackground():
 
     ball_1 = createSeparator("#FFFFFF",0,30)
 
-    d = DisplayElement(100,0)
-    number = 0
+    fistSecElement = DisplayElement(300,0)
+    secondSecElement = DisplayElement(100,0)
+
+    firstMinElement = DisplayElement(-100,0)
+    secondMinElement = DisplayElement(-300,0)
+
+    firstSec = 0
+    secondSec = 0
+    firstMin = 0
+    secondMin = 0
+    fistSecElement.drawNumber(firstSec)
+    secondSecElement.drawNumber(secondSec)
+    firstMinElement.drawNumber(firstMin)
+    secondMinElement.drawNumber(secondMin)
 
     while True:
-        if number == 9:
-            number = 0
+        if firstSec == 9:
+            firstSec = 0
+            secondSec = secondSec + 1
+            secondSecElement.drawNumber(secondSec)
         else:
-             number = number +1
+             firstSec = firstSec +1
 
         window.update()
-        d.drawNumber(number)
+        fistSecElement.drawNumber(firstSec)
+
         ball.color("#000000")
         ball_1.color("#000000")
         time.sleep(1)

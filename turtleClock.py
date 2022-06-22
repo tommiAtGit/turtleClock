@@ -41,7 +41,7 @@ def createBackground():
     tenMinElement.drawNumber(tenMin)
 
     while True:
-        if oneSecund == 9:
+        if oneSecund == 9 and tenSec != 5:
             oneSecund = 0
             tenSec = tenSec + 1
         else:
